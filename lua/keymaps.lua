@@ -15,6 +15,10 @@ vim.keymap.set('n', '<leader>pg', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ")});
 end)
 vim.keymap.set('n', '<leader>pr', builtin.lsp_references, {})
+vim.keymap.set('n', '<leader>pt', builtin.treesitter, {})
+vim.keymap.set('n', '<leader>pp', function()
+    vim.cmd.Telescope "resume";
+end)
 
 -- lsp-zero stuff
 local cmp = require('cmp')
