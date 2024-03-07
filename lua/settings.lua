@@ -13,3 +13,4 @@ opt.expandtab = true
 opt.smartindent = true
 
 opt.scrolloff = 8
+opt.colorcolumn = "140"
