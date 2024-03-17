@@ -14,3 +14,8 @@ opt.smartindent = true
 
 opt.scrolloff = 8
 opt.colorcolumn = "140"
+
+-- copilot stuff
+vim.cmd [[
+    let g:copilot_workspace_folders = ["~/repos/ipcg/"]
+]]

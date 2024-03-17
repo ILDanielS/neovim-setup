@@ -6,6 +6,7 @@ require("treesitter")
 require("todo")
 require("_harpoon")
 require("_telescope")
+require("_dap")
 
 vim.cmd.colorscheme "catppuccin-macchiato"
 -- vim.cmd.colorscheme "tokyonight"

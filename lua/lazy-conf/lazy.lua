@@ -27,9 +27,10 @@ require("lazy").setup({
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 , },
     {"folke/tokyonight.nvim",  lazy = false,  priority = 1000,  opts = {}},
     {'tpope/vim-fugitive'},
-    {'zbirenbaum/copilot.lua'},
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     {"nvim-treesitter/nvim-treesitter-context"},
     {"folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, },
+    {"github/copilot.vim"},
+    {"mfussenegger/nvim-dap"},
 })
 
