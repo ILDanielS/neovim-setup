@@ -12,6 +12,8 @@ require('mason-lspconfig').setup({
       'clangd',
       'lua_ls',
       'rust_analyzer',
+      'cmake',
+      'jsonls',
   },
   handlers = {
     lsp_zero.default_setup,
@@ -20,4 +22,4 @@ require('mason-lspconfig').setup({
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.cmake.setup{}
 require'lspconfig'.rust_analyzer.setup{}
---require'lspconfig'.lua_language_server.setup{}
+require'lspconfig'.jsonls.setup{}
