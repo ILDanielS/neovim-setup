@@ -3,12 +3,9 @@ vim.g.mapleader = " "
 
 -- generic mapping
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
 vim.keymap.set("i", "<C-c>", "<Esc>")
-
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
@@ -25,6 +22,7 @@ vim.keymap.set('n', '<leader>pt', builtin.treesitter, {})
 vim.keymap.set('n', '<leader>pp', function()
     vim.cmd.Telescope "resume";
 end)
+--vim.keymap.set('n', '<leader>ps', builtin.current_buffer_fuzzy_find, {})
 
 -- lsp-zero stuff
 local cmp = require('cmp')
@@ -39,6 +37,8 @@ cmp.setup({
   mapping = {
     -- ['<Tab>'] = cmp_action.tab_complete(),
     -- ['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
+    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
     ['<C-y>'] = cmp.mapping.confirm({select = false}),
     ['<C-e>'] = cmp.mapping.abort(),
     ['<Up>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
@@ -65,21 +65,22 @@ cmp.setup({
   },
 })
 vim.keymap.set('n', '<leader>sh', vim.cmd.ClangdSwitchSourceHeader);
+vim.keymap.set('n', '<leader>of', function()
+    vim.diagnostic.open_float()
+end)
+
 -- vim fugitive
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git);
 
-
 -- copilot 
 vim.keymap.set('i', '<C-y>', 'copilot#Accept("\\<CR>")', {
-      expr = true,
-        replace_keycodes = false
-    })
+    expr = true,
+    replace_keycodes = false
+})
 vim.g.copilot_no_tab_map = true
 vim.keymap.set('i', '<C-w>', '<Plug>(copilot-accept-word)')
 
-
 -- dap stuff
-
 vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
 vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
 vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
@@ -103,3 +104,6 @@ vim.keymap.set('n', '<Leader>ds', function()
   local widgets = require('dap.ui.widgets')
   widgets.centered_float(widgets.scopes)
 end)
+
+-- UndoTree stuff
+vim.keymap.set('n', '<leader><F5>', vim.cmd.UndotreeToggle)

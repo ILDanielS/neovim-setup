@@ -14,6 +14,7 @@ require('mason-lspconfig').setup({
       'rust_analyzer',
       'cmake',
       'jsonls',
+      'bashls',
   },
   handlers = {
     lsp_zero.default_setup,
@@ -23,3 +24,4 @@ require'lspconfig'.clangd.setup{}
 require'lspconfig'.cmake.setup{}
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.jsonls.setup{}
+require'lspconfig'.bashls.setup{}
