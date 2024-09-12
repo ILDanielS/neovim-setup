@@ -105,5 +105,3 @@ vim.keymap.set('n', '<Leader>ds', function()
   widgets.centered_float(widgets.scopes)
 end)
 
--- UndoTree stuff
-vim.keymap.set('n', '<leader><F5>', vim.cmd.UndotreeToggle)
