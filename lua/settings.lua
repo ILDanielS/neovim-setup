@@ -13,3 +13,13 @@ opt.expandtab = true
 opt.smartindent = true
 
 opt.scrolloff = 8
+opt.colorcolumn = "100"
+
+-- copilot stuff
+vim.cmd [[
+    let g:copilot_workspace_folders = ["~/repos/ipcg/"]
+]]
+
+vim.cmd[[
+    set clipboard^=unnamed,unnamedplus
+]]
