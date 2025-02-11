@@ -20,7 +20,13 @@ require('mason-lspconfig').setup({
     lsp_zero.default_setup,
   }
 })
-require'lspconfig'.clangd.setup{}
+require'lspconfig'.clangd.setup{
+    cmd =
+    {
+        "clangd",
+        "--header-insertion=never",
+    }
+}
 require'lspconfig'.cmake.setup{}
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.jsonls.setup{}

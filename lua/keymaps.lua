@@ -12,13 +12,14 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- telescope stuff
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+vim.keymap.set('n', '<leader>ph', builtin.help_tags, {})
 vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-vim.keymap.set('n', '<leader>ps', builtin.live_grep, {}) 
+vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>pg', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ")});
 end)
 vim.keymap.set('n', '<leader>pr', builtin.lsp_references, {})
-vim.keymap.set('n', '<leader>pt', builtin.treesitter, {})
+vim.keymap.set('n', '<leader>pt', builtin.lsp_document_symbols	, {})
 vim.keymap.set('n', '<leader>pp', function()
     vim.cmd.Telescope "resume";
 end)
