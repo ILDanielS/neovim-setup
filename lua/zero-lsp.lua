@@ -8,6 +8,7 @@ end)
 
 require("mason").setup()
 require('mason-lspconfig').setup({
+automatic_enable = {},
   ensure_installed = {
       'clangd',
       'lua_ls',
