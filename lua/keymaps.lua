@@ -106,3 +106,5 @@ vim.keymap.set('n', '<Leader>ds', function()
   widgets.centered_float(widgets.scopes)
 end)
 
+vim.keymap.set('n', '<Leader>ai', ':CopilotChat<CR>' )
+vim.keymap.set('v', '<Leader>ai', ':CopilotChat<CR>' )
