@@ -32,6 +32,7 @@ require("lazy").setup({
     {"folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, },
     {"github/copilot.vim"},
     {"mfussenegger/nvim-dap"},
+    { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
     {"mbbill/undotree"},
     { "CopilotC-Nvim/CopilotChat.nvim", dependencies = { { "github/copilot.vim" }, -- or zbirenbaum/copilot.lua
       { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
