@@ -32,3 +32,25 @@ require'lspconfig'.cmake.setup{}
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.jsonls.setup{}
 require'lspconfig'.bashls.setup{}
+
+require('sonarlint').setup({
+   server = {
+      cmd = {
+         'sonarlint-language-server',
+         -- Ensure that sonarlint-language-server uses stdio channel
+         '-stdio',
+         '-analyzers',
+         -- paths to the analyzers you need, using those for python and java in this example
+         vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarcfamily.jar"),
+      }
+   },
+   filetypes = {
+      -- Tested and working
+      'cpp',
+   },
+   settings = {
+       sonarlint = {
+           pathToCompileCommands = "~/repos/ipcg/build/compile_commands.json",
+       }
+   }
+})
