@@ -21,6 +21,7 @@ return {
     opts = {
         -- See Configuration section for options
     },
+    { "https://gitlab.com/schrieveslaach/sonarlint.nvim"},
     -- See Commands section for default commands if you want to lazy load on them
 },
 }
