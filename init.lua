@@ -1,5 +1,5 @@
 require("settings")
-require("lazy-conf.lazy")
+require("config.lazy")
 require("keymaps")
 require("zero-lsp")
 require("treesitter")
