@@ -42,15 +42,15 @@ require('sonarlint').setup({
          '-analyzers',
          -- paths to the analyzers you need, using those for python and java in this example
          vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarcfamily.jar"),
+      },
+      settings = {
+          sonarlint = {
+              pathToCompileCommands = "/home/yz17vh/repos/ipcg/build/compile_commands.json",
+          }
       }
    },
    filetypes = {
       -- Tested and working
       'cpp',
    },
-   settings = {
-       sonarlint = {
-           pathToCompileCommands = "~/repos/ipcg/build/compile_commands.json",
-       }
-   }
 })
