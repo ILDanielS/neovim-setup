@@ -6,6 +6,14 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+
+-- lsp mapping
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, {})
+vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, {})
+vim.keymap.set('n', '<F4>', vim.lsp.buf.code_action, {})
+
+
 -- telescope stuff
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
