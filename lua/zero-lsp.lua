@@ -61,7 +61,7 @@ require('sonarlint').setup({
                               connectionId = "https-sonar-gm-com",
                               -- this is the url that will go into get_credentials
                               serverUrl = "https://sonar.gm.com",
-                              disableNotifications = true,
+                              disableNotifications = false,
                           },
                       },
                       --sonarcloud = {
@@ -83,11 +83,11 @@ require('sonarlint').setup({
           -- In the future a integration with https://github.com/folke/neoconf.nvim or some similar
           -- plugin, might be worthwhile.
           local project_root_and_ids = {
-              ["/home/yz17vh/repos/ipcg"] = "com.gm.sdv:gminfo_vcu_qnx_gm_vpe-sv",
+              ["/home/yz17vh/repos/ipcg"] = "gminfo_vcu_qnx_gm_vpe-sv",
+              ["/home/yz17vh/repos/ipcg-lsp"] = "gminfo_vcu_qnx_gm_vpe-sv",
+              --["/home/yz17vh/repos/ipcg"] = "com.gm.sdv:gminfo_vcu_qnx_gm_vpe-sv",
               -- … further mappings …
           }
-          print("roothPath: " .. params.rootPath)
-          print("project_key: " .. project_root_and_ids[params.rootPath])
           config.settings.sonarlint.connectedMode.project = {
               connectionId = "https-sonar-gm-com",
               projectKey = project_root_and_ids[params.rootPath],
